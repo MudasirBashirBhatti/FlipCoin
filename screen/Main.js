@@ -32,7 +32,6 @@ const Main = () => {
                     'X-RapidAPI-Host': 'the-love-calculator.p.rapidapi.com'
                 }
             };
-    
             axios
                 .request(options)
                 .then((Love) => {
