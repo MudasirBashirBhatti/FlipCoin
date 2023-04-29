@@ -42,8 +42,13 @@ const Main = () => {
                 })
         }
     }
-   
 
+   let Percentage;
+     if(firstname.length===0 || lastname.length===0){
+         Percentage = 'Result'
+     }else{
+        Percentage=`${Math.floor(parseInt(data["percentage match: "]))}%`
+     }
 
     return (
 
@@ -51,7 +56,7 @@ const Main = () => {
         <View style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Text style={{ color: colors.secondry, fontSize: 40 }}>Love Calculator</Text>
             <Image style={{ width: '100%', alignContent: 'center' }} source={require('../assets/heart.png')} resizeMode='contain' />
-            <Text style={{ color: colors.secondry, fontSize: 40 }}>{`${Math.floor(parseInt(data["percentage match: "]))}%`}</Text>
+            <Text style={{ color: colors.secondry, fontSize: 40 }}>{Percentage}</Text>
             <Text style={{ color: colors.secondry, fontSize: 20, marginVertical: '5%' }}>{data["result: "]}</Text>
             <TextInput style={mainStyle.inputEdit} placeholder='Enter First Person' onChangeText={text => setfirstname(text)} />
             <TextInput style={mainStyle.inputEdit} placeholder='Enter Second Person' onChangeText={text => setlastname(text)} />
