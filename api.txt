@@ -1,0 +1,22 @@
+const axios = require('axios');
+
+const options = {
+  method: 'GET',
+  url: 'https://the-love-calculator.p.rapidapi.com/love-calculator',
+  params: {
+    fname: 'oliver m',
+    sname: 'chloe p'
+  },
+  headers: {
+    'content-type': 'application/octet-stream',
+    'X-RapidAPI-Key': '6295ed2ee1msh85caf8da0897279p1fb325jsn7b3889ade925',
+    'X-RapidAPI-Host': 'the-love-calculator.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
